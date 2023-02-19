@@ -1,0 +1,41 @@
+<table class="type1 full sp3 oneline thtc" summary="お部屋の詳細情報">
+<tbody><tr><th>専有面積（m<sup>2</sup>）</th><td class="l">28 <small>m<sup>2</sup></small></td></tr>
+<tr><th>ベッドサイズ（cm）</th><td class="l">122 <small>×</small> 203</td></tr>
+<tr><th>階数</th><td class="l">高層階</td></tr>
+<tr><th>宿泊人数</th><td class="l">1 <small>～</small> 2 <small>人</small></td></tr>
+<tr><th>眺望</th><td>高層階から一望する那覇市街</td></tr>
+<tr><th>お部屋の設備</th><td>
+<ul class="type2 liner fix">
+<li>無料インターネットアクセス（ワイヤレス・有線）</li>
+<li>40型液晶ハイビジョンテレビ</li>
+<li>ケーブル・衛星放送</li>
+<li>電話</li>
+<li>金庫</li>
+<li>コーヒーメーカー</li>
+<li>電気ケトル</li>
+<li>保冷庫</li>
+<li>傘</li>
+<li>遮光カーテン</li>
+<li>ルームウェア</li>
+<li>スリッパ</li>
+<li>ミニバー（有料）</li>
+<li>朝刊</li>
+<li>ターンダウンサービス</li>
+</ul>
+</td></tr>
+<tr><th>バスルームの設備</th><td>
+<ul class="type2 liner fix">
+<li>ACCA KAPPA（シャンプー・コンディショナー・ボディソープ・ボディローション・石鹸）</li>
+<li>ヘアドライヤー</li>
+<li>バスローブ</li>
+</ul>
+</td></tr>
+<tr><th class="nobr">ご要望により<br class="nos"/>ご利用いただけるサービス</th><td>
+<ul class="type2 liner fix">
+<li>アイロン・アイロン台貸出</li>
+<li>ランドリーサービス</li>
+<li>24時間コンシェルジュサービス</li>
+<li>ルームサービス</li>
+</ul>
+</td></tr>
+</tbody></table>
