@@ -2,6 +2,9 @@ from flask import Flask, request, render_template
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from flask import sqlite3
+from flask import pandas as pd
+
 app = Flask(__name__)
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -36,3 +39,18 @@ db.session.add(add_data)
 
 # テーブルへの変更を保存する
 db.session.commit()
+
+#db作成
+dbname="hotel.db"
+
+#dbコネクト
+conn = sqlite3.connect(dbname)
+c = conn.cursor()
+
+#作成したdbを見てみる
+select_sql = 'select * from scraping.py'
+for row in c.execute(select_sql):
+    print(row)
+
+conn.close()
+
