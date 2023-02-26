@@ -2,12 +2,17 @@ from flask import Flask, request, render_template
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from flask import sqlite3
-from flask import pandas as pd
+import sqlite3
+import pandas as pd
+
+
+
+   
 
 app = Flask(__name__)
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 
 
 # SQLAlchemyでデータベースに接続する
@@ -54,3 +59,18 @@ for row in c.execute(select_sql):
 
 conn.close()
 
+#dbに接続
+
+conn =sqlite3.connect('test.rb')
+
+# カーソルを取得
+cur = conn.cursor()
+
+# テーブルを作成
+cur.execute('CREATE TABLE IF NOT EXISTS test_table (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)')
+
+# データを保存
+conn.commit()
+
+# 接続を閉じる
+conn.close()
