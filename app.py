@@ -21,7 +21,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 db = SQLAlchemy(app)
 
 # テーブルの中身をクラスとして定義する
-class order_table(db.Model):
+class test_table(db.Model):
     orderid = db.Column(db.Integer, primary_key=True, autoincrement=True)
     pub_date = db.Column(db.DateTime, nullable=False,default=datetime.utcnow)
     goods_number = db.Column(db.Integer)
@@ -39,7 +39,7 @@ goods_number = 810
 payment = 'cash'
 
 # テーブルにデータを追加する
-add_data = order_table(date,goods_number,payment)
+add_data = test_table(date,goods_number,payment)
 db.session.add(add_data)
 
 # テーブルへの変更を保存する
