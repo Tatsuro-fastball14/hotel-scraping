@@ -5,6 +5,9 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import chromedriver_binary 
 import requests
 from bs4 import BeautifulSoup
+import sqlite3
+import mysql
+
 
 cmd = 'pip install --upgrade chromedriver_binary' 
 res = subprocess.call(cmd, shell=True)
@@ -27,6 +30,32 @@ r = requests.get('https://hyattregencynaha.jp/guestroom/' + str(img['src']))
 with open(f'test.jpg', 'wb') as f:
     f.write(r.content) 
 div=soup.find_all('table') [0]
+print(div.find("tr"))
+print(div.find("th"))
+print(div.find("td"))
+col_data = []
+col_list = []
+data = []
+import pandas as pd
+for tr in div.find_all('tr'):
+#     print(tr)
+#     print('列名:',tr.find('th').text,'列にいれる値:',tr.find('td').text)
+    
+    col_list.append(tr.find('th').text)
+    data.append(tr.find('td').text.replace("¥n",""))
+col_data.append(data)
+
+df = pd.DataFrame(col_data,columns=col_list)
+df.to_csv('test.csv',index=False)
+
+df =pd.read_csv('test csv')
+with mysql.connect('example.db')as conn:
+    df.to_sql('example_table',conn, if_exists='replace',index=False)
+
+print
+
+df = pd.DataFrame(col_data,columns=col_list)
+df.to_csv('test.csv',index=False) 
 f = open('myfile.txt', 'w')
 f.write(str(div))
 f.close() 
