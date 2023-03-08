@@ -7,7 +7,7 @@ import requests
 from bs4 import BeautifulSoup
 import sqlite3
 import mysql
-
+import mysql.connector
 
 cmd = 'pip install --upgrade chromedriver_binary' 
 res = subprocess.call(cmd, shell=True)
