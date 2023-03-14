@@ -6,7 +6,7 @@ import chromedriver_binary
 import requests
 from bs4 import BeautifulSoup
 import sqlite3
-import mysql
+import MySQLdb
 import mysql.connector
 
 cmd = 'pip install --upgrade chromedriver_binary' 
@@ -53,6 +53,35 @@ with mysql.connect('example.db')as conn:
     df.to_sql('example_table',conn, if_exists='replace',index=False)
 
 print
+
+# 接続する 
+conn = MySQLdb.connect(
+ unix_socket = '/Applications/MAMP/tmp/mysql/mysql.sock',
+ user='root',
+ passwd='root',
+ host='localhost',
+ db='mysql')
+
+# カーソルを取得する
+cur = conn.cursor()
+
+# SQL（データベースを操作するコマンド）を実行する
+# userテーブルから、HostとUser列を取り出す
+sql = "select Host, User from user"
+cur.execute(sql)
+
+# 実行結果を取得する
+rows = cur.fetchall()
+
+# 1行ずつ表示する
+for row in rows:
+ print(row)
+
+cur.close
+conn.close
+
+
+
 
 df = pd.DataFrame(col_data,columns=col_list)
 df.to_csv('test.csv',index=False) 
