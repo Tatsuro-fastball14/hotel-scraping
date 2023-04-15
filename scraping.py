@@ -8,6 +8,11 @@ from bs4 import BeautifulSoup
 import sqlite3
 import MySQLdb
 import mysql.connector
+import  csv
+import pandas as pd
+from sqlalchemy import create_engine
+
+
 
 cmd = 'pip install --upgrade chromedriver_binary' 
 res = subprocess.call(cmd, shell=True)
@@ -88,3 +93,41 @@ df.to_csv('test.csv',index=False)
 f = open('myfile.txt', 'w')
 f.write(str(div))
 f.close() 
+
+
+#Mysqlコネクタの設定
+cnx= mysql.connector.connect(user='ユーザー名',password='パスワード')
+host='ホスト名'
+database='データベース名'
+
+#csvファイルを開いてデータを読み込む
+with open('test.csv', newline=''as csvfile:)
+    reader  =   csv.reader(csvfile, delimiter=',',  quotechar='')
+    next(reader)
+    for row in reader:
+        add_data('INSERT INTO'テーブル名")
+
+#変更をコミットする
+    cnx.commit()
+
+#Mysqlコネクタをクローズする
+ cursor.close()
+ cnx.close()
+
+ CREATE DATABASE testdb;
+> CREATE TABLE testdb.mysql_table(
+    col1 int
+    ,col2 int
+    ,col3 int
+  );
+
+df = pd.DataFrame([[1,2,3],[4,5,6]],columns=['col1','col2','col3'])
+print(df)
+
+#engine = create_engine('mysql://<user>:<password>@<host>/<database>?charset=utf8')
+engine = create_engine('mysql://user:password@localhost/test_db?charset=utf8')
+ 
+#df.to_sql(<table_name>,con=engine, if_exists='append', index=False)
+df.to_sql('testdb.mysq_table',con=engine, if_exists='append', index=False)
+
+
