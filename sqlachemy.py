@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from app2 import Flask, request, render_template
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 
