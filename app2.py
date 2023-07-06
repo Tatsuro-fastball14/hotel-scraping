@@ -24,8 +24,11 @@ def hello():
 def test2():
     return render_template("index.html",username="taro",data=data)
 
-import sys
-import tkinter
+@app.route('/index')
+def custom():
+    return render_template("custom.html",username="taro",data=data)
+
+
 
 root = tkinter.Tk()
 root.mainloop()
