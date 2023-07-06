@@ -1,6 +1,9 @@
 # ライブラリ呼び出し
 from flask import Flask, render_template
 import pandas as pd 
+import sys
+import tkinter
+
 df=pd.read_csv("/Users/tatsuro/projects/hotel-scraping/test.csv")
 data = [list(e) for e in zip(df['宿泊人数'],df['眺望'],df["お部屋の設備"],df["バスルームの設備"])]
 print(data)
@@ -17,9 +20,15 @@ def hello_World():
 def hello():
     return render_template("test.html",username="taro",data=data)
 
-@app.route('/test2')
-def hello():
-    return render_template("test2.html",username="taro",data=data)
+@app.route('/index')
+def test2():
+    return render_template("index.html",username="taro",data=data)
+
+import sys
+import tkinter
+
+root = tkinter.Tk()
+root.mainloop()
 
 
 # サーバー起動

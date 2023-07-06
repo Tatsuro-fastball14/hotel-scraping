@@ -1,0 +1,8 @@
+<div class="side-bar">
+  <%= search_form_for @p, url: cooks_search_path do |f| %>
+    <%= f.label :store, 'Keyword' %>
+      <%= f.search_field :store_cont %>
+        <br>
+        <%= f.submit '検 索' %>
+          <% end %>
+</div>
