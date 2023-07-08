@@ -1,8 +1,9 @@
 # ライブラリ呼び出し
 from flask import Flask, render_template
 import pandas as pd 
-import sys
-import tkinter
+from datetime import datetime
+
+
 
 df=pd.read_csv("/Users/tatsuro/projects/hotel-scraping/test.csv")
 data = [list(e) for e in zip(df['宿泊人数'],df['眺望'],df["お部屋の設備"],df["バスルームの設備"])]
@@ -10,6 +11,17 @@ print(data)
 
 # クラス呼び出し
 app = Flask(__name__)
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# SQLAlchemyでデータベースに接続する
+db_uri = 'sqlite:///test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+
+# SQLAlchemyでデータベースに接続する
+db_uri = 'sqlite:///test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+
 
 # ルーティングを定義
 @app.route('/')
@@ -30,8 +42,6 @@ def custom():
 
 
 
-root = tkinter.Tk()
-root.mainloop()
 
 
 # サーバー起動
