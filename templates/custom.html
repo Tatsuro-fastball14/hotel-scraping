@@ -1,21 +1,604 @@
-Give me a 3 day itinerary
-Personalize your trip the way you want it
-1day
-
-<!DOCTYPE html>
-<html lang="ja">
-<meta charset="utf-8">
+<html lang="ja" class="translated-ltr">
 
 <head>
-  <title>書き込み完了</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="description"
+    content="Tripnotes is a travel planner that uses a custom recommendation engine, their own data, and GPT to help travelers find the right places to go.">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon-b7de9399.ico">
+  <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="/assets/fontawesome/css/sharp-solid.min.css" rel="stylesheet">
+  <link href="/assets/fontawesome/css/brands.min.css" rel="stylesheet">
+  <script type="text/javascript" async=""
+    src="https://www.gstatic.com/recaptcha/releases/pCoGBhjs9s8EhFOHJFe8cqis/recaptcha__ja.js" crossorigin="anonymous"
+    integrity="sha384-R9/PLtMqGrf+/tRnOkkFTu5rjoAAK9+52tR96rxp/unHcuVU0ddAGt0NuUZYIN82"></script>
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=explicit" async="" defer=""></script>
+  <title>Tripnotes.ai - インテリジェントな旅行プランナー</title>
+  <script type="module" crossorigin="" src="/assets/index-83733fe7.js"></script>
+  <link rel="stylesheet" href="/assets/index-59ecdab4.css">
+  <link rel="modulepreload" as="script" crossorigin="" href="/assets/index-e684ca70.js">
+  <link rel="stylesheet" href="/assets/index-4b007a6f.css">
+  <link rel="modulepreload" as="script" crossorigin="" href="/assets/index-b14e9069.js">
+  <link rel="modulepreload" as="script" crossorigin="" href="/assets/index-83733fe7.js">
+  <link rel="modulepreload" as="script" crossorigin="" href="/assets/scale-control-860e7756.js">
+  <link rel="modulepreload" as="script" crossorigin="" href="/assets/constants-e8c19b4b.js">
+  <link rel="modulepreload" as="script" crossorigin="" href="/assets/logo_bb_tbg-e122f66a.js">
+  <link rel="modulepreload" as="script" crossorigin="" href="/assets/index-2e4736b8.js">
+  <link rel="stylesheet" href="/assets/logo_bb_tbg-98f923f9.css">
+  <link rel="stylesheet" href="/assets/index-d3a01634.css">
+  <script src="https://www.googletagmanager.com/gtag/js?l=dataLayer&amp;id=G-98DST7PEC8" async=""></script>
+  <link rel="modulepreload" as="script" crossorigin="" href="/assets/mapbox-gl-53bbaa45.js">
+  <link rel="modulepreload" as="script" crossorigin="" href="/assets/index-7935cd2e.js">
+  <link rel="modulepreload" as="script" crossorigin="" href="/assets/logo_with_text-97f0e6c9.js">
+  <link rel="modulepreload" as="script" crossorigin="" href="/assets/index-9ae1ae7c.js">
+  <link rel="modulepreload" as="script" crossorigin="" href="/assets/index-e4d5365c.js">
+  <link rel="stylesheet" href="/assets/index-74b6229e.css">
+  <link rel="stylesheet" href="/assets/index-f240db5b.css">
+  <link rel="modulepreload" as="script" crossorigin="" href="/assets/index-1ad2c37b.js">
+  <link rel="modulepreload" as="script" crossorigin="" href="/assets/data-29ac2432.js">
+  <link rel="stylesheet" href="/assets/index-c1a51de7.css">
+  <link type="text/css" rel="stylesheet" charset="UTF-8"
+    href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.qhDXWpKopYk.L.W.O/d=0/rs=AN8SPfp0QXhhaDDdjg_LgcSqoZiPEzC1tw/m=el_main_css">
 </head>
 
 <body>
-  <h1>コメントを書き込みました</h1>
-  <br>
-  <form action="/" method="get">
-    <button type="submit">戻る</button>
-  </form>
+  <div id="root">
+    <div class="previewBar pl5 pr4 flex items-center justify-between" style="height: 55px;">
+      <div class="flex items-center">
+        <div class="previewBarBaseText">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">これは、コラボレーション、ドキュメント編集、インポートなどが含まれる Tripnotes 製品全体の</font>
+          </font><span style="font-weight: 700;">
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">限定プレビュー</font>
+            </font>
+          </span>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">です。</font>
+          </font>
+        </div>
+      </div>
+      <div class="flex items-center">
+        <div class="learnMoreButton pointer pa2">
+          <div class="learnMoreButtonText">
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Tripnotes の詳細についてはこちらをご覧ください</font>
+            </font>
+          </div>
+        </div>
+        <div class="pointer ml4"><span class="loginTextPreviewBar">
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">ログイン</font>
+            </font>
+          </span></div>
+      </div>
+    </div>
+    <div id="AppContainer" class="flex">
+      <div class="flex-grow-0">
+        <div class="flex justify-center relative top-1-4 pl3 pr4"><img class="pointer"
+            src="/assets/logo_with_text-5d141d2d.svg" title="v0.1.28 [ 6ca5b8ae ]"></div>
+      </div>
+      <div class="flex-grow-1">
+        <div style="height: calc(100vh - 55px); display: flex;">
+          <div class="w-50 relative flex-grow-0 pl3 pt5">
+            <div style="opacity: 1; transform: none;">
+              <div>
+                <div class="db">
+                  <div class="absolute top-1 flex items-center w-100 justify-between pl2 justify-end">
+                    <div class="invisible"><i class="fa-sharp fa-solid fa-location-dot places-count-pin-icon"></i><span
+                        class="ml1 places-count-pin-text f6">
+                        <font style="vertical-align: inherit;">
+                          <font style="vertical-align: inherit;">3</font>
+                        </font>
+                        <font style="vertical-align: inherit;">
+                          <font style="vertical-align: inherit;">か所</font>
+                        </font>
+                      </span></div><span class="f3 pointer pa2 invisible"><i
+                        class="fa-solid fa-bars menuBarColor"></i></span>
+                    <div class="ph4 flex items-center">
+                      <div class="flex items-center pr3">
+                        <div style="height: 25px; width: 25px;"><svg xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 240 240" width="240" height="240"
+                            preserveAspectRatio="xMidYMid meet"
+                            style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
+                            <defs>
+                              <clipPath id="__lottie_element_876">
+                                <rect width="240" height="240" x="0" y="0"></rect>
+                              </clipPath>
+                              <linearGradient id="__lottie_element_880" spreadMethod="pad"
+                                gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="0">
+                                <stop offset="0%" stop-color="rgb(89,199,169)"></stop>
+                                <stop offset="50%" stop-color="rgb(83,195,170)"></stop>
+                                <stop offset="100%" stop-color="rgb(76,191,170)"></stop>
+                              </linearGradient>
+                              <linearGradient id="__lottie_element_884" spreadMethod="pad"
+                                gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="0">
+                                <stop offset="0%" stop-color="rgb(89,199,169)"></stop>
+                                <stop offset="50%" stop-color="rgb(83,195,170)"></stop>
+                                <stop offset="100%" stop-color="rgb(76,191,170)"></stop>
+                              </linearGradient>
+                            </defs>
+                            <g clip-path="url(#__lottie_element_876)">
+                              <g transform="matrix(0,1.0384399890899658,-1.0384399890899658,0,132.46127319335938,125.19219970703125)"
+                                opacity="1" style="display: block;">
+                                <g opacity="1" transform="matrix(0.9755399823188782,0,0,0.9755399823188782,-5,12)">
+                                  <path stroke="url(#__lottie_element_884)" stroke-linecap="round"
+                                    stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke-opacity="1"
+                                    stroke-width="20"
+                                    d=" M0,-108.31050109863281 C59.77656555175781,-108.31050109863281 108.31050109863281,-59.77656555175781 108.31050109863281,0 C108.31050109863281,59.77656555175781 59.77656555175781,108.31050109863281 0,108.31050109863281 C-59.77656555175781,108.31050109863281 -108.31050109863281,59.77656555175781 -108.31050109863281,0 C-108.31050109863281,-59.77656555175781 -59.77656555175781,-108.31050109863281 0,-108.31050109863281z">
+                                  </path>
+                                </g>
+                              </g>
+                              <g transform="matrix(1,0,0,1,120,124.75)" opacity="1" style="display: block;">
+                                <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                  <path stroke="url(#__lottie_element_880)" stroke-linecap="round"
+                                    stroke-linejoin="round" fill-opacity="0" stroke-opacity="1" stroke-width="19"
+                                    d=" M-39.125,0.625 C-39.125,0.625 -14,27 -14,27 C-14,27 37.625,-26.875 37.625,-26.875">
+                                  </path>
+                                </g>
+                              </g>
+                            </g>
+                          </svg></div>
+                      </div>
+                      <div class="view-only pv2 ph2 ba br2 b--transparent mr2 flex items-center"><i
+                          class="fa-solid fa-eye view-only-eye-color mr2"></i><span class="view-only-text">
+                          <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">表示のみ</font>
+                          </font>
+                        </span></div>
+                      <div class="share-button pv2 ph2 ba br2 pointer b--transparent"><span
+                          class="share-button-text-basic share-button-text-color-default">
+                          <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">共有</font>
+                          </font>
+                        </span></div>
+                    </div>
+                  </div>
+                  <div class="overflow-scroll" style="height: calc((100vh - 4rem) - 45px);">
+                    <div class="mt5 nl1 pl3">
+                      <div class="location black-60 ml1">
+                        <font style="vertical-align: inherit;">
+                          <font style="vertical-align: inherit;">沖縄県</font>
+                        </font>
+                      </div>
+                      <div class="flex items-center content-center"><textarea
+                          class="submission-name-input f2 b 100-ns title main-font" rows="1" maxlength="75" readonly=""
+                          style="width: 95%; height: 47px;">Give me a 3 day itinerary</textarea></div>
+                    </div>
+                    <div class="mt2 black-80 note-text-style ph3 relative mr4" style="padding-bottom: 1.5rem;">
+                      <div data-slate-editor="true" data-slate-node="value" contenteditable="false" zindex="-1"
+                        style="position: relative; outline: none; white-space: pre-wrap; overflow-wrap: break-word; min-height: auto;">
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">1日目</font>
+                                </font>
+                              </span></span></span><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">：</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">朝食</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">9:15am：琉球銘菓 三矢（ドーナツショップ）</font>
+                                </font>
+                              </span></span></span><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">)</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">ランチ</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">12:20pm: ひがし食堂</font>
+                                </font>
+                              </span></span></span><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">)</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">14:35：ネオパークオキナワ（動物園</font>
+                                </font>
+                              </span></span></span><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">）</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">夕食</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">18:20：カレー屋</font>
+                                </font>
+                              </span></span></span><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">たんぽぽ</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">2日目</font>
+                                </font>
+                              </span></span></span><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">：</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;"></font>
+                              </span></span></span>
+                          <font style="vertical-align: inherit;"><span data-slate-node="text"><span
+                                data-slate-leaf="true"><span class="linked-word b pointer relative "
+                                  id="9b4b155d:40a57654"><span data-slate-string="true">
+                                    <font style="vertical-align: inherit;">10:25am:東南植物園</font>
+                                  </span></span></span></span><span data-slate-node="text"><span
+                                data-slate-leaf="true"><span data-slate-string="true">
+                                  <font style="vertical-align: inherit;">で緑豊かなオアシスを体験</font>
+                                </span></span></span></font><span data-slate-node="text"><span
+                              data-slate-leaf="true"><span class="linked-word b pointer relative "
+                                id="9b4b155d:40a57654"><span data-slate-string="true">
+                                  <font style="vertical-align: inherit;"></font>
+                                </span></span></span></span>
+                          <font style="vertical-align: inherit;"><span data-slate-node="text"><span
+                                data-slate-leaf="true"><span data-slate-string="true">
+                                  <font style="vertical-align: inherit;">で、緑豊かなオアシスを体験します</font>
+                                </span></span></span></font><span data-slate-node="text"><span
+                              data-slate-leaf="true"><span data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">、30,000 以上の地元の植物や外来の植物が生息しています。</font>
+                                  <font style="vertical-align: inherit;">庭園をつなぐ美しい歩道、運河、門、橋を探索してください。</font>
+                                  <font style="vertical-align: inherit;">ふれあい動物園では、クモザル、ヤギ、カピバラに会いましょう。</font>
+                                  <font style="vertical-align: inherit;">
+                                    宝探しや手工芸品のワークショップなど、あらゆる年齢層を対象とした定期的な教育プログラムに参加してください。</font>
+                                  <font style="vertical-align: inherit;">館内レストランで食事をするか、ピクニックを持参してください。</font>
+                                  <font style="vertical-align: inherit;">出発前に小さなギフトショップに立ち寄るのを忘れないでください</font>
+                                </font>
+                              </span></span></span><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">。</font>
+                                </font>
+                              </span></span></span>
+                        </div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">ランチ</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">12:40pm: Pizza in the Sky (花人逢) (ピザ</font>
+                                </font>
+                              </span></span></span><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">)</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">午後 2 時 55 分: 沖縄県立博物館・美術館 (美術館) -
+                                    この一流の博物館で、沖縄の活気に満ちた歴史、文化、自然の驚異を発見してください。</font>
+                                  <font style="vertical-align: inherit;">
+                                    バイリンガルの標識が設置された、充実した展示を鑑賞し、地元の才能を紹介する魅力的な美術展を探索してください。</font>
+                                  <font style="vertical-align: inherit;">
+                                    モノレールのおもろまち駅から歩いてすぐのこの博物館は、沖縄の豊かな遺産をより深く理解したい旅行者にとって必見の場所です</font>
+                                </font>
+                              </span></span></span><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">。</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">17:10：</font>
+                                </font>
+                              </span></span></span><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                class="linked-word b pointer relative " id="08fe7540:1ac6c135"><span
+                                  data-slate-string="true">
+                                  <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">知花ドッグパーク</font>
+                                  </font>
+                                </span></span></span></span><span data-slate-node="text"><span
+                              data-slate-leaf="true"><span data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">（公園</font>
+                                </font>
+                              </span></span></span><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">）</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">夕食</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">19:25: Jack's Steak House (ジャッキーステーキハウス)
+                                    (ステーキハウス)</font>
+                                </font>
+                              </span></span></span><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">)</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">3日目</font>
+                                </font>
+                              </span></span></span><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">：</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">10:25am：首里城公園（首里城公園</font>
+                                </font>
+                              </span></span></span><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">）</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">夕食</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">18:20：</font>
+                                </font>
+                              </span></span></span><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                class="linked-word b pointer relative linked-word-hover" id="24a0fd3a:d2aede6f"><span
+                                  data-slate-string="true">
+                                  <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">オイスターシャック那覇桜坂</font>
+                                  </font>
+                                </span></span></span></span><span data-slate-node="text"><span
+                              data-slate-leaf="true"><span data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">で新鮮なシーフードを満喫！</font>
+                                  <font style="vertical-align: inherit;">この居心地の良いレストランでは、テーブルで完璧に焼き上げた牡蠣を毎日提供しています。
+                                  </font>
+                                  <font style="vertical-align: inherit;">牡蠣醤油を加えてさらにコクをプラス。</font>
+                                  <font style="vertical-align: inherit;">ホタテやエビなどの魚介類を食べ放題でぜひお試しください。</font>
+                                  <font style="vertical-align: inherit;">友人とのランチデートに最適な、ランチタイムの飲み放題をお楽しみください。</font>
+                                  <font style="vertical-align: inherit;">オイスター シャックでシーフードへの欲求を満たしましょう</font>
+                                </font>
+                              </span></span></span><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true">
+                                <font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">!</font>
+                                </font>
+                              </span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-zero-width="n" data-slate-length="0">﻿<br></span></span></span></div>
+                        <div data-slate-node="element"><span data-slate-node="text"><span data-slate-leaf="true"><span
+                                data-slate-string="true"> </span></span></span></div>
+                      </div>
+                      <div class="hoveringToolbar hoveringToolbarDesktop">
+                        <div class="flex justify-center items-center ph1">
+                          <div class="addToMap ph3 pv2 pointer flex items-center pointer grow"><i
+                              class="fa-sharp fa-solid fa-location-dot f6 places-count-pin-icon"></i><span
+                              class="addToMapText b ml1 addToMapTextDesktop">
+                              <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">地図に追加</font>
+                              </font>
+                            </span></div>
+                        </div>
+                      </div>
+                      <div id="EditorBottom" class="invisible" style="height: 0.5rem;"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute right-1 pa1 bottom-1">
+                  <div class="flex">
+                    <div class="relative"><img class="grow pointer" src="/assets/concierge_stay2-9425b49e.png"
+                        alt="コンシェルジュ"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex-grow-1">
+            <div class="mapboxgl-map" style="position: relative; width: 100%; height: 100%;">
+              <div class="mapboxgl-canary" style="visibility: hidden;"></div>
+              <div
+                class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate">
+                <canvas class="mapboxgl-canvas" tabindex="0" aria-label="地図" role="region" width="1200" height="472"
+                  style="width: 600px; height: 236px; cursor: default;"></canvas>
+                <div aria-label="マップマーカー" class="mapboxgl-marker mapboxgl-marker-anchor-bottom"
+                  style="transform: translate(393px, -67px) translate(-50%, -100%) translate(-21.5px, -60px); z-index: 83; opacity: 1; pointer-events: auto;">
+                  <div class="_pin_6kg4x_9 relative"><img src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f332.svg"
+                      width="25" height="25" alt="木"></div>
+                </div>
+                <div aria-label="マップマーカー" class="mapboxgl-marker mapboxgl-marker-anchor-bottom"
+                  style="transform: translate(379px, -43px) translate(-50%, -100%) translate(-21.5px, -60px); z-index: 67; opacity: 1; pointer-events: auto;">
+                  <div class="_pin_6kg4x_9 relative"><img src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f332.svg"
+                      width="25" height="25" alt="公園"></div>
+                </div>
+                <div aria-label="マップマーカー" class="mapboxgl-marker mapboxgl-marker-anchor-center"
+                  style="transform: translate(300px, 118px) translate(-50%, -50%) translate(-120px, -235px); z-index: 3079; opacity: 1; pointer-events: auto;">
+                  <div class="_pin_6kg4x_9 _current_6kg4x_44 _pin-bg-gray_6kg4x_104 justify-center items-center"><img
+                      src="https://twemoji.maxcdn.com/v/14.0.2/svg/1f41f.svg?size=188" class="_image_ebyeo_1" alt=""
+                      height="188" width="188" style="width: 188px; height: 188px; opacity: 0.5;">
+                    <div class="absolute bottom-1 left-1 z-3">
+                      <div class="_name_6kg4x_63 f4 b mb1">
+                        <font style="vertical-align: inherit;">
+                          <font style="vertical-align: inherit;">オイスターシャック 那覇桜坂</font>
+                        </font>
+                      </div><span class="_tag_6kg4x_73 f5">
+                        <font style="vertical-align: inherit;">
+                          <font style="vertical-align: inherit;">シーフード</font>
+                        </font>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mapboxgl-control-container">
+                <div class="mapboxgl-ctrl-top-left"></div>
+                <div class="mapboxgl-ctrl-top-right"></div>
+                <div class="mapboxgl-ctrl-bottom-left">
+                  <div class="mapboxgl-ctrl" style="display: block;"><a class="mapboxgl-ctrl-logo" target="_blank"
+                      rel="noopener nofollow" href="https://www.mapbox.com/" aria-label="マップボックスのロゴ"></a></div>
+                </div>
+                <div class="mapboxgl-ctrl-bottom-right">
+                  <div class="mapboxgl-ctrl mapboxgl-ctrl-attrib mapboxgl-compact"><button
+                      class="mapboxgl-ctrl-attrib-button" type="button" aria-label="帰属の切り替え"><span
+                        class="mapboxgl-ctrl-icon" aria-hidden="true" title="帰属の切り替え"></span></button>
+                    <div class="mapboxgl-ctrl-attrib-inner" role="list"><a href="https://www.mapbox.com/about/maps/"
+                        target="_blank" title="Mapbox" aria-label="Mapbox" role="listitem">© Mapbox</a> <a
+                        href="https://www.openstreetmap.org/about/" target="_blank" title="OpenStreetMap"
+                        aria-label="OpenStreetMap" role="listitem">© OpenStreetMap</a> <a class="mapbox-improve-map"
+                        href="https://apps.mapbox.com/feedback/?owner=welcomeapp&amp;id=ckow5xv8u04hw18mo35d4dkd3&amp;access_token=pk.eyJ1Ijoid2VsY29tZWFwcCIsImEiOiJja2R1bG56a2Ixa3FkMnhteXBrZmJ6dG42In0.DkZMHVN4eOMRXjjvY4PdIw#/127.7019/26.1988/9.23"
+                        target="_blank" aria-label="Map feedback" role="listitem" rel="noopener nofollow">Improve this
+                        map</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Toastify"></div>
+  </div>
+  <div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate"
+    style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: 'Google Sans', Arial, sans-serif;"
+    data-id="">
+    <div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd">
+      <div class=" VIpgJd-yAWNEb-hvhgNd-l4eHX-i3jM8c"><img
+          src="https://fonts.gstatic.com/s/i/productlogos/translate/v14/24px.svg" width="24" height="24" alt=""></div>
+      <div class=" VIpgJd-yAWNEb-hvhgNd-k77Iif-i3jM8c">
+        <div class="VIpgJd-yAWNEb-hvhgNd-IuizWc" dir="ltr">原文</div>
+        <div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div>
+      </div>
+      <div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid ltr">
+        <div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od ltr" dir="ltr">
+          <div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">この翻訳を評価してください</div>
+          <div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">いただいたフィードバックは Google 翻訳の改善に役立てさせていただきます</div>
+        </div>
+        <div class="VIpgJd-yAWNEb-hvhgNd-xgov5 ltr"><button id="goog-gt-thumbUpButton" type="button"
+            class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="良い翻訳" aria-label="良い翻訳" aria-pressed="false"><span
+              id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false"
+                class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M">
+                <path
+                  d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z">
+                </path>
+              </svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24"
+                focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M">
+                <path
+                  d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z">
+                </path>
+              </svg></span></button><button id="goog-gt-thumbDownButton" type="button"
+            class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="悪い翻訳" aria-label="悪い翻訳" aria-pressed="false"><span
+              id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false"
+                class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M">
+                <path
+                  d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z">
+                </path>
+              </svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24"
+                focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M">
+                <path
+                  d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z">
+                </path>
+              </svg></span></button></div>
+      </div>
+      <div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce">
+        <form id="goog-gt-votingForm" action="//translate.googleapis.com/translate_voting?client=te_lib" method="post"
+          target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl"
+            id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input
+            type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans"
+            id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe
+          name="votingFrame" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+
+
+
 </body>
 
 </html>

@@ -2,6 +2,7 @@
 from flask import Flask, render_template
 import pandas as pd 
 from datetime import datetime
+from flask import request
 
 
 
@@ -18,9 +19,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db_uri = 'sqlite:///test.db'
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 
-# SQLAlchemyでデータベースに接続する
-db_uri = 'sqlite:///test.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+import sqlite3
+
+
+
 
 
 # ルーティングを定義
@@ -39,6 +41,27 @@ def test2():
 @app.route('/index')
 def custom():
     return render_template("custom.html",username="taro",data=data)
+
+@app.route("/receive_get", methods=["GET"])
+def receive_get():
+        name = request.args["my_name"]
+        print(name)
+        # データベースの作成・接続とカーソル生成
+        c = sqlite3.connect("test.db")
+        cur = c.cursor()
+        # データテーブルを作成する
+        try:
+            cur.execute("create table sample_table2(id integer primarykey auto_increment , date, text)")
+        except:
+            pass
+        cur.execute(f"insert into sample_table2(id,text) values(1,'{name}');")
+        c.commit()
+        cur.execute('SELECT * FROM sample_table2')
+        for row in cur:
+            print(row)
+        
+        c.close()
+        return render_template("custom.html")
 
 
 
