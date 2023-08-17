@@ -41,6 +41,10 @@ def test2():
 @app.route('/index')
 def custom():
     return render_template("custom.html",username="taro",data=data)
+@app.route('/aaa')
+def custom2():
+    return render_template("aaa.html",username="taro",data=data)
+
 
 @app.route("/receive_get", methods=["GET"])
 def receive_get():
