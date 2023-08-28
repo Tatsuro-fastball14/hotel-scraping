@@ -44,7 +44,13 @@ def custom():
 @app.route('/aaa')
 def custom2():
     return render_template("aaa.html",username="taro",data=data)
+@app.route('/show2')
+def custom3():
+    return render_template("show2.html",username="taro",data=data)
 
+@app.route('/show3')
+def custom4():
+    return render_template("show3.html",username="taro",data=data)
 
 @app.route("/receive_get", methods=["GET"])
 def receive_get():
