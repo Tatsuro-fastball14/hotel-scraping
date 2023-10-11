@@ -3,26 +3,46 @@ from flask import Flask, render_template
 import pandas as pd 
 from datetime import datetime
 from flask import request
+from flask import Flask, request, jsonify
+from flask_mysqldb import MySQL
+import pymysql
+import sqlite3
+
 
 
 
 df=pd.read_csv("/Users/tatsuro/projects/hotel-scraping/test.csv")
+df["imgurl"]="https://images.trvl-media.com/lodging/36000000/35740000/35736500/35736430/788d05ca.jpg?impolicy=resizecrop&rw=1200&ra=fit"
 data = [list(e) for e in zip(df['宿泊人数'],df['眺望'],df["お部屋の設備"],df["バスルームの設備"])]
 print(data)
 
 # クラス呼び出し
 app = Flask(__name__)
-SQLALCHEMY_TRACK_MODIFICATIONS = False
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+from sqlalchemy import create_engine
 
-# SQLAlchemyでデータベースに接続する
-db_uri = 'sqlite:///test.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+# データベースの接続設定
+USERNAME = 'root'
+PASSWORD = ''
+HOST = 'localhost'
+DATABASE = 'test2'
 
-import sqlite3
+# SQLAlchemyを使用してMySQLに接続
+engine = create_engine(f"mysql+pymysql://{USERNAME}:{PASSWORD}@{HOST}/{DATABASE}")
 
 
+@app.route('/table')
+def index2():
+    # データベース接続
+    connection = pymysql.connect(host=HOST, user=USERNAME, password=PASSWORD, db=DATABASE)
+    
+    # SQLクエリの実行
+    df = pd.read_sql('SELECT * FROM my_table', connection)
+    
+    # 接続のクローズ
+    connection.close()
 
+    # HTMLにデータを渡して表示
+    return render_template('show3.html', data=df.to_dict(orient='records'))
 
 
 # ルーティングを定義
@@ -73,11 +93,51 @@ def receive_get():
         c.close()
         return render_template("custom.html")
 
+@app.route('/show4')
+def custom5():
+    return render_template("for.html")
+
+
+
+@app.route('/')
+def index():
+    return 'Hello, World!'
+
+@app.route('/add', methods=['POST'])
+def add_data():
+    data = request.get_json()
+    name = data["name"]
+    age = data["age"]
+
+    cursor = mysql.connection.cursor()
+    cursor.execute("INSERT INTO mytable(name, age) VALUES (%s, %s)", (name, age))
+    mysql.connection.commit()
+    cursor.close()
+
+    return jsonify({"message": "Data added successfully!"}), 201
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
 
 
-# サーバー起動
-app.run(debug=True)
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

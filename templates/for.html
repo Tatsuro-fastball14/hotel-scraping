@@ -1,0 +1,42 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Wlcome to okinawa Trip Concierge Okinawa </title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Bootstrap icons-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"
+    type="text/css" />
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+    type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <h1>1次元配列のループ</h1>
+  {% set array = ['コレクティブ那覇', 'ハレクラニ', 'c', 'd', 'e','f'] %}
+  
+  <ul>
+    {% for i in array %}
+  <div class="card" style="width:600px;">
+    <div class="row no-gutters">
+      <div class="col-lg-6">
+        <a href="/show3"> <img class="card-img" src="{{ url_for('static', filename='img/コレクティブ.jpg') }}"></a>
+      </div>
+      <div class="col-lg-6">
+        <div class="card-body">
+          <h4 class="card-title"></h4><a href="/show3">{{i}}</a>
+          <p class="card-text">那覇市</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+    {% endfor %}
+  </ul>
+
+</body>
