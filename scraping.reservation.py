@@ -9,7 +9,7 @@ import pandas as pd
 
 cmd = 'pip install --upgrade chromedriver_binary' 
 res = subprocess.call(cmd, shell=True)
-url = "https://go-resol-hotel.reservation.jp/ja/hotels/trinity-naha/rooms/10017293?_ga=2.10783924.1442734765.1697063444-1405639140.1697063444&_gl=1*gq2m8k*_ga*MTQwNTYzOTE0MC4xNjk3MDYzNDQ0*_ga_XMWVW0YK44*MTY5NzA2MzQ0My4xLjEuMTY5NzA2MzQ1My41MC4wLjA."
+url = "https://www.expedia.co.jp"
 d = DesiredCapabilities.CHROME
 d['goog:loggingPrefs'] = { 'performance': 'ALL' }
 def new_func(d):
