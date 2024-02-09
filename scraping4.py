@@ -13,17 +13,24 @@ driver = webdriver.Chrome()
 
 # 指定されたURLにアクセス
 driver.get(URL)
-time.sleep(5)
+time.sleep(20)
 
 
 # 例: CSSクラスを使う場合
-clickable_element = driver.find_element(By.CLASS_NAME, 'uitk-text')
+clickable_element = driver.find_element(By.XPATH,"/html/body/div[2]/div[1]/div/div[1]/main/div/div/section/div[1]/div[1]/div[2]/div/div[2]/div[2]/section/div/div/div/div[1]/div/ul/li[2]/a/span")
 clickable_element.click()
-wait = WebDriverWait(driver, 10)
-clickable_element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'uitk-text')))
+time.sleep(10)
+clickable_element = driver.find_element(By.XPATH, "/html/body/div[2]/div[1]/div/div[1]/main/div/div/section/div[1]/div[1]/div[2]/div/div[2]/div[2]/section/div/div/div/div[1]/div/ul/li[4]/a/span")
 clickable_element.click()
+time.sleep(10)
+clickable_element = driver.find_element(By.XPATH,"/html/body/div[2]/div[1]/div/div[1]/main/div/div/section/div[1]/div[1]/div[2]/div/div[2]/div[2]/section/div/div/div/div[1]/div/ul/li[3]/a/span")
 
-
+clickable_element.click()
+time.sleep(10)
+clickable_element = driver.find_element(By.XPATH,"//html/body/div[2]/div[1]/div/div[1]/main/div/div/section/div[1]/div[1]/div[2]/div/div[3]/div[12]/div[1]/div/div/div[1]/div/div[2]/div[3]/div/ul/li[1]/div")
+# wait = WebDriverWait(driver, 10)
+# clickable_element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'uitk-text')))
+# clickable_element.click()
 
 
 
@@ -76,16 +83,20 @@ html = driver.page_source
 # BeautifulSoupでHTMLを解析
 soup = BeautifulSoup(html, 'html.parser')
 
-h2_tag = soup.find_all('h2')
+ul_tag = soup.find_all('ul')
 
-print(h2_tag)
-
+print(ul_tag)
+output=[]
 # サービスのリストを抽出
 services_list = soup.find_all('div', class_="uitk-text")
+print(services_list)
 for service in services_list:
-    print(service.span.text)
-
-
+    output.append(service.text)
+    print(service.text)
+import pandas as pd 
+df= pd.DataFrame(output)
+df.to_csv("output2.csv")
+print("csv出力しました")
 #     header = soup.find('h4', class_='uitk-heading').text
 
 # # 周辺情報のリストを取得
